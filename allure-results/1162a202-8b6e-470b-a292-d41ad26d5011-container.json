@@ -1,0 +1,1 @@
+{"uuid":"1162a202-8b6e-470b-a292-d41ad26d5011","name":"com.connecthr.test.LoginTest","children":["9554fa43-2205-4ccb-af4a-6c8e2d1077aa"],"befores":[{"name":"setupClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1758029069533,"stop":1758029070557}],"afters":[],"start":1758029069426,"stop":1758029077451}
