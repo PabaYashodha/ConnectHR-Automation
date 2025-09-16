@@ -1,128 +1,106 @@
 package com.connecthr.test;
-import io.qameta.allure.*;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
+import org.testng.annotations.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class LoginTest {
-    public static void main(String[] args) {
-        // Setup ChromeDriver with SSL ignore option
+
+    WebDriver driver;
+    WebDriverWait wait;
+
+    @BeforeClass
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
-        WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
-//login
-
+    @Test(description = "Login and create a new asset category")
+    @Description("This test logs in, navigates to Asset Management, creates a new category and searches it")
+    public void loginAndCreateCategoryTest() {
         try {
             // 1. Open the login page
             driver.get("https://172.21.128.14/login");
-            driver.manage().window().maximize();
 
-            Thread.sleep(2000);
+            // 2. Enter credentials
+            WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_username")));
+            WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_password")));
+            WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.login-button")));
 
-            // 2. Locate elements
-            WebElement usernameField = driver.findElement(By.id("login_username"));  // change locator as per your page
-            WebElement passwordField = driver.findElement(By.id("login_password"));
-            WebElement loginButton = driver.findElement(By.cssSelector("button.login-button"));
-
-            Thread.sleep(3000);
-            // 3. Enter credentials
             usernameField.sendKeys("Support@connecthr.ae");
             passwordField.sendKeys("C0nne<t@#2|");
-
-            // 4. Click login
-//            Thread.sleep(3000);
             loginButton.click();
 
-            // 5. Verification (check if login successful)
-
-            // Wait until URL contains "dashboard" (max 10 seconds)
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            // 3. Verification (check if login successful)
             wait.until(ExpectedConditions.urlContains("dashboard"));
             System.out.println("✅ Login successful");
 
-            // Navigate to  asset management module
+            // Navigate to Asset Management module
             WebElement assetModule = wait.until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='menu-text' and normalize-space(text())='Assets Management']"))
             );
             assetModule.click();
-            wait.until(ExpectedConditions.urlContains("https://172.21.128.14/asset"));
+            wait.until(ExpectedConditions.urlContains("/asset"));
             System.out.println("✅ Navigated to Asset Management module");
 
-
-            //Click new category button
+            // Click new category button
             WebElement newCategoryBtn = wait.until(
-                    ExpectedConditions.elementToBeClickable(
-                            By.xpath("//button[span[normalize-space()='New category']]")
-                    )
+                    ExpectedConditions.elementToBeClickable(By.xpath("//button[span[normalize-space()='New category']]"))
             );
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
-            //Add category name
-            WebElement categoryTitleInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(
-                            By.xpath("//input[@id='name']")
-                    )
-            );
-            categoryTitleInput.sendKeys(" Test Category7");
-            System.out.println("✅ Enter to new category name");
+            // Add category name
+            WebElement categoryTitleInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
+            categoryTitleInput.sendKeys("Test Category7");
+            System.out.println("✅ Entered new category name");
 
-            //category key
-            WebElement categoryKeyInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(
-                            By.xpath("//input[@id='key']")
-                    )
-            );
-            categoryKeyInput.sendKeys(" Test Category key7");
-            System.out.println("✅ Enter to new category key");
+            // Add category key
+            WebElement categoryKeyInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("key")));
+            categoryKeyInput.sendKeys("Test Category key7");
+            System.out.println("✅ Entered new category key");
 
-            //click create button
+            // Click create button
             WebElement createBtn = wait.until(
-                    ExpectedConditions.elementToBeClickable(
-                            By.xpath("//button[span[normalize-space()='Create']]")
-                    )
+                    ExpectedConditions.elementToBeClickable(By.xpath("//button[span[normalize-space()='Create']]"))
             );
             createBtn.click();
             System.out.println("✅ Form submitted");
 
-
-            //search the category
-            WebElement searchBox1 = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(
-                            By.xpath("//input[@placeholder='Search']")
-                    )
-            );
-
-            searchBox1.clear();              // Clear any pre-filled value
-            searchBox1.sendKeys("Laptop");   // Type your name
-            searchBox1.sendKeys(Keys.ENTER); // Hit Enter
+            // Search the category
+            WebElement searchBox1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Search']")));
+            searchBox1.clear();
+            searchBox1.sendKeys("Laptop");
+            searchBox1.sendKeys(Keys.ENTER);
             System.out.println("✅ Category searched successfully.");
 
-            Thread.sleep(5000);
+            Assert.assertTrue(true, "Test finished without errors");
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            // 6. Close browser
-            driver.quit();
+            Assert.fail("Test failed due to exception: " + e.getMessage());
         }
-        System.out.println("Login test running...");
-        Assert.assertTrue(true);
     }
 
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            System.out.println("✅ Browser closed");
+        }
+    }
 }
-
