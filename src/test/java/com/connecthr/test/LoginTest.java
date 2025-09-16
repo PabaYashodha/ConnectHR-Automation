@@ -1,7 +1,6 @@
 package com.connecthr.test;
 
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -26,7 +25,7 @@ public class LoginTest {
         options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // increased wait for stability
     }
 
     @Test(description = "Login and create a new asset category")
@@ -64,13 +63,18 @@ public class LoginTest {
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
+            // Wait for the modal to appear before interacting
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ant-modal-content")));
+
             // Add category name
-            WebElement categoryTitleInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
+            WebElement categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(By.id("name")));
+            categoryTitleInput.clear();
             categoryTitleInput.sendKeys("Test Category7");
             System.out.println("✅ Entered new category name");
 
             // Add category key
-            WebElement categoryKeyInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("key")));
+            WebElement categoryKeyInput = wait.until(ExpectedConditions.elementToBeClickable(By.id("key")));
+            categoryKeyInput.clear();
             categoryKeyInput.sendKeys("Test Category key7");
             System.out.println("✅ Entered new category key");
 
@@ -84,7 +88,7 @@ public class LoginTest {
             // Search the category
             WebElement searchBox1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Search']")));
             searchBox1.clear();
-            searchBox1.sendKeys("Laptop");
+            searchBox1.sendKeys("Test Category7");
             searchBox1.sendKeys(Keys.ENTER);
             System.out.println("✅ Category searched successfully.");
 
