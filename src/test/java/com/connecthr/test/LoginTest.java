@@ -1,14 +1,15 @@
 package com.connecthr.test;
 
 import io.qameta.allure.*;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
 
@@ -21,13 +22,15 @@ public class LoginTest {
 
     @BeforeMethod
     public void setUp() {
+        // Setup ChromeDriver with SSL ignore option
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--ignore-certificate-errors"); // Ignore SSL
-        options.addArguments("--start-maximized");
+        options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
         driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        // Increase wait to 30 seconds for CI/Jenkins
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     @Test(description = "Verify login and create a new category in Asset Management")
@@ -35,10 +38,10 @@ public class LoginTest {
     @Story("Login -> Navigate -> Create Category -> Search Category")
     public void loginAndCreateCategoryTest() {
         try {
-            // 1. Open login page
+            // 1. Open the login page
             driver.get("https://172.21.128.14/login");
 
-            // 2. Login
+            // 2. Locate elements and login
             WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_username")));
             WebElement passwordField = driver.findElement(By.id("login_password"));
             WebElement loginButton = driver.findElement(By.cssSelector("button.login-button"));
@@ -52,36 +55,36 @@ public class LoginTest {
             System.out.println("✅ Login successful");
 
             // 4. Navigate to Asset Management module
-            By assetMenuLocator = By.xpath("//span[@class='menu-text' and normalize-space(text())='Assets Management']/ancestor::a");
-            WebElement assetModule = wait.until(ExpectedConditions.presenceOfElementLocated(assetMenuLocator));
-
-            // Scroll and click using JS for React menu
+            WebElement assetModule = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='menu-text' and normalize-space(text())='Assets Management']"))
+            );
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", assetModule);
-            wait.until(ExpectedConditions.elementToBeClickable(assetModule));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", assetModule);
+            assetModule.click();
 
             wait.until(ExpectedConditions.urlContains("/asset"));
             System.out.println("✅ Navigated to Asset Management module");
 
-            // 5. Click New Category button
-            By newCategoryBtnLocator = By.xpath("//button[span[normalize-space()='New category']]");
-            WebElement newCategoryBtn = wait.until(ExpectedConditions.elementToBeClickable(newCategoryBtnLocator));
+            // 5. Click new category button
+            WebElement newCategoryBtn = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.xpath("//button[span[normalize-space()='New category']]"))
+            );
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", newCategoryBtn);
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
             // 6. Enter category name
             WebElement categoryTitleInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Category title']"))
+                    ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Category title']"))
             );
-            categoryTitleInput.clear();
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryTitleInput);
             categoryTitleInput.sendKeys("Test Category37");
             System.out.println("✅ Entered new category name");
 
             // 7. Enter category key
             WebElement categoryKeyInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.id("key"))
+                    ExpectedConditions.elementToBeClickable(By.id("key"))
             );
-            categoryKeyInput.clear();
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryKeyInput);
             categoryKeyInput.sendKeys("Test Category key37");
             System.out.println("✅ Entered new category key");
 
@@ -89,16 +92,18 @@ public class LoginTest {
             WebElement createBtn = wait.until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//button[span[normalize-space()='Create']]"))
             );
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", createBtn);
             createBtn.click();
             System.out.println("✅ Form submitted");
 
             // 9. Search the category
-            WebElement searchBox1 = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Search']"))
+            WebElement searchBox = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Search']"))
             );
-            searchBox1.clear();
-            searchBox1.sendKeys("Laptop");
-            searchBox1.sendKeys(Keys.ENTER);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", searchBox);
+            searchBox.clear();
+            searchBox.sendKeys("Laptop");
+            searchBox.sendKeys(Keys.ENTER);
             System.out.println("✅ Category searched successfully.");
 
             Assert.assertTrue(true, "Test completed successfully");

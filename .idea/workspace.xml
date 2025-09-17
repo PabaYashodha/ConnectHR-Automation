@@ -5,13 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 2">
-      <change afterPath="$PROJECT_DIR$/allure-results/1c97a26a-00d3-4125-b560-3d7865a10e20-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/54299049-a0f0-44a9-80a5-c67ce06f5a63-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/675a885e-b70a-4a4b-84c4-df727c0272b4-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/8bb9da10-f680-4b80-b237-3e543589ab92-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/c0efe4ba-6190-4cae-b146-132ac6f74e6e-result.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/fde88551-d967-4d08-9b7d-f592f7383780-container.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758069819101</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit 2">
+      <option name="closed" value="true" />
+      <created>1758070613280</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1758070613280</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
