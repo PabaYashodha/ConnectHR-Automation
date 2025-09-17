@@ -75,7 +75,7 @@ public class LoginTest {
 
             // 6. Enter category name
             WebElement categoryTitleInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(@class,'ant-input-affix-wrapper')]//input[@id='name']"))
+                    ExpectedConditions.visibilityOfElementLocated(By.id("name"))
             );
             categoryTitleInput.sendKeys("Test Category0007");
             Thread.sleep(1000);
