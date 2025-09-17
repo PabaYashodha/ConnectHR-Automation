@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 3">
-      <change afterPath="$PROJECT_DIR$/allure-results/00b19b3e-7714-42c7-86ea-58963fe23e08-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/2c070b8f-24ba-4ae8-82b2-ac86ae48d90b-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/577f0775-9f3b-4f47-a423-2d7badfd0fa2-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/6fdecce3-0c57-4396-8b9e-3ac89cb45cee-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/8f796e14-d61d-42c5-809a-f4e373cf5a57-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/ccb57552-1cc4-4552-a541-30a3bca1b87f-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/226812ea-f6fa-457d-bc64-a7b42803a5e5-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/382ed95d-a03a-4b73-b463-2282efeb2f87-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/511d0304-3bdb-468a-a508-c94b9655b48d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/523e6fc9-878d-41c3-a2cb-1258b85bf8ea-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5531d6c5-b311-436a-a6c6-92445332e2e7-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/69223a44-6594-438b-8066-075465da1a52-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6c2c5512-d787-4523-a3a6-e4b4e4e7684a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8e2ddd26-d768-4b24-85b1-73a623b15bd7-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/97da6f5e-9520-4cd4-ac8d-3cc39ba1e32c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b88623bd-3161-4dfc-83d5-2e45b959965e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e2ca4caa-efd0-4ab0-892e-807ca968cfaa-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/fb47044a-1abf-48a0-a40a-f3bc8f664a32-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ff229e7d-77e8-4856-b17a-4e7c8f491600-container.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758071000838</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commit 3">
+      <option name="closed" value="true" />
+      <created>1758071371639</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1758071371639</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

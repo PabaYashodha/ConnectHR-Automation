@@ -23,10 +23,10 @@ public class LoginTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
+        options.addArguments("--ignore-certificate-errors"); // Ignore SSL
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // wait for CI/Jenkins
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     @Test(description = "Verify login and create a new category in Asset Management")
@@ -34,72 +34,67 @@ public class LoginTest {
     @Story("Login -> Navigate -> Create Category -> Search Category")
     public void loginAndCreateCategoryTest() {
         try {
-            // 1. Open the login page
-            driver.get("https://172.21.128.14/login"); // Replace with your actual login URL
+            // 1. Open login page
+            driver.get("https://172.21.128.14/login");
 
             // 2. Login
             WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_username")));
             WebElement passwordField = driver.findElement(By.id("login_password"));
             WebElement loginButton = driver.findElement(By.cssSelector("button.login-button"));
 
-            usernameField.sendKeys("Support@connecthr.ae"); // Replace with your username
-            passwordField.sendKeys("C0nne<t@#2|"); // Replace with your password
+            usernameField.sendKeys("Support@connecthr.ae");
+            passwordField.sendKeys("C0nne<t@#2|");
             loginButton.click();
 
+            // 3. Verify login
             wait.until(ExpectedConditions.urlContains("dashboard"));
             System.out.println("✅ Login successful");
 
-            // 3. Navigate to Asset Management module
-            WebElement assetModule = wait.until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space(text())='Assets Management']"))
-            );
+            // 4. Navigate to Asset Management module
+            WebElement assetModule = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//span[@class='menu-text' and normalize-space(text())='Assets Management']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", assetModule);
             assetModule.click();
-
             wait.until(ExpectedConditions.urlContains("/asset"));
             System.out.println("✅ Navigated to Asset Management module");
 
-            // 4. Click new category button
-            WebElement newCategoryBtn = wait.until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//button[span[normalize-space()='New category']]"))
-            );
+            // 5. Click New Category button
+            WebElement newCategoryBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[span[normalize-space()='New category']]")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", newCategoryBtn);
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
-            // 5. Enter category title
-            WebElement categoryTitleInput = wait.until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Category title']"))
-            );
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryTitleInput);
-            categoryTitleInput.sendKeys("Test Category37"); // Replace with your category name
+            // 6. Wait for modal to appear
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//div[contains(@class,'ant-modal-content')]")));
+            Thread.sleep(1000); // wait for modal animation
+            System.out.println("✅ Modal is visible");
+
+            // 7. Enter category title
+            WebElement categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//input[@placeholder='Category title']")));
+            categoryTitleInput.sendKeys("Test Category37");
             System.out.println("✅ Entered new category name");
 
-            // 6. Enter category key
-            WebElement categoryKeyInput = wait.until(
-                    ExpectedConditions.elementToBeClickable(By.id("key"))
-            );
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryKeyInput);
-            categoryKeyInput.sendKeys("Test Category key37"); // Replace with your category key
+            // 8. Enter category key
+            WebElement categoryKeyInput = wait.until(ExpectedConditions.elementToBeClickable(By.id("key")));
+            categoryKeyInput.sendKeys("Test Category key37");
             System.out.println("✅ Entered new category key");
 
-            // 7. Click Create button
-            WebElement createBtn = wait.until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//button[span[normalize-space()='Create']]"))
-            );
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", createBtn);
+            // 9. Click Create button
+            WebElement createBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[span[normalize-space()='Create']]")));
             createBtn.click();
             System.out.println("✅ Form submitted");
 
-            // 8. Search for the category
-            WebElement searchBox = wait.until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Search']"))
-            );
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", searchBox);
+            // 10. Search the category
+            WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//input[@placeholder='Search']")));
             searchBox.clear();
-            searchBox.sendKeys("Laptop"); // Replace with the search term you want
+            searchBox.sendKeys("Laptop");
             searchBox.sendKeys(Keys.ENTER);
-            System.out.println("✅ Category searched successfully");
+            System.out.println("✅ Category searched successfully.");
 
             Assert.assertTrue(true, "Test completed successfully");
 
