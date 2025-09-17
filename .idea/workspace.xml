@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 2">
-      <change afterPath="$PROJECT_DIR$/allure-results/3195513d-aaf4-468b-a604-40e02e2e8ba1-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/50eac452-9e4a-4f11-ad61-c109704908a8-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/5fc52793-5292-454d-861c-c51789695e7e-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/76afdfab-0f0d-461b-a0dc-79f520d5c718-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/8273b410-52b0-4ba4-b651-e11f213caf22-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/9a0a6ec8-4680-4f4a-87ce-962d89858a65-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/9f6bea58-18bd-4f84-83a2-42b8dd8c4626-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/b529d66f-bdda-48f0-bb88-c9d28456974a-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/d4d29d0f-b7a0-4b78-8e31-6bc979346003-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/fc459a51-82d0-493a-869c-29a6ec226683-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/02f72509-99c3-4d58-a1b2-5807376912bd-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0ec58aa5-d4fe-4290-9536-c71ca575dfe8-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/248f02c3-bcae-49da-bc9f-9f4868252a2d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/27f855ae-3d23-48f2-b9bb-8b5ec4f92caa-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/362ceeb1-62c5-427f-94f8-eeb1a38ebef8-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/37b726f0-8ab7-4ca7-b607-dec865d54ceb-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3c273fa3-fde8-4f2d-b0fa-224e24380112-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/482924f1-5c91-48a0-95ea-cae27317bf28-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/51504f2e-ded7-4777-ba5f-1c7e375150f7-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8589d068-ec88-4a60-a159-f2f384df4f48-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/85a17d86-0d0e-4273-9580-d43ea279b80c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/95165423-d9b2-458a-9f47-85028d7a84f9-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a6126f02-d3d7-4dc9-8ba3-f7f96f1a154f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a7fb7cdb-be0b-4ccf-bee4-f60b949042af-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ad4f8306-50ba-43f6-8183-3d852b963f85-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/af4f7ce4-5a1e-4033-a85b-6404c90893d7-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ce62d2bf-793b-4455-b451-60da604496d4-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e5ba195c-49a2-4a38-9120-d06a1f04603f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ede05f5e-4f23-4c22-b2be-51d0ae251edf-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ef21c091-3639-443e-b234-2de930ded342-result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758068547544</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="commit 2">
+      <option name="closed" value="true" />
+      <created>1758069074074</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1758069074074</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

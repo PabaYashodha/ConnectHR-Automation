@@ -70,7 +70,7 @@ public class LoginTest {
 
             // 6. Enter category name
             WebElement categoryTitleInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.id("name"))
+                    ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Category title']\n"))
             );
             categoryTitleInput.sendKeys("Test Category37");
             System.out.println("✅ Entered new category name");
