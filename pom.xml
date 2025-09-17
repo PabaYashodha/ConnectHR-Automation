@@ -22,7 +22,14 @@
             <version>4.23.0</version>
         </dependency>
 
-        <!-- WebDriverManager (latest) -->
+        <!-- Selenium DevTools for Chrome 140 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v127</artifactId>
+            <version>4.23.0</version>
+        </dependency>
+
+        <!-- WebDriverManager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -44,7 +51,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Override vulnerable transitive dependencies -->
+        <!-- Jackson / Commons Lang -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
