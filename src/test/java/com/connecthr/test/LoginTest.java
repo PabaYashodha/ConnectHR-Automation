@@ -75,9 +75,9 @@ public class LoginTest {
 
             // 7. Enter category title
             WebElement categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath("//div[contains(@class,'ant-modal-content')]//input[@placeholder='Category title']")));
+                    By.xpath("//div[contains(@class,'ant-modal-content')]//input[@id='name']")));
 
-            categoryTitleInput.sendKeys("Test Category47");
+            categoryTitleInput.sendKeys("Test Category57");
             System.out.println("✅ Entered new category name");
 
             // 8. Enter category key

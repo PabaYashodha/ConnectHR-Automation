@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 5">
-      <change afterPath="$PROJECT_DIR$/allure-results/33cabe46-1d7f-47b7-9ef0-29478b364a44-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/48cf22ba-f4a4-479c-a197-25e7abfd2310-container.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/2fc2d98e-9156-494b-887a-97e1162a4f06-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/56ee9f22-1a87-4ce9-8994-9ec62b368342-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/64f21ec1-22ed-47f8-a0e9-d27f386e2a1e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/acb96772-b221-454a-8099-3ce3be72fa87-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ba569a87-0d18-4925-bb51-d4d9836b1aea-container.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758075166138</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="commit 5">
+      <option name="closed" value="true" />
+      <created>1758080432287</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1758080432287</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
