@@ -84,14 +84,14 @@ public class LoginTest {
             WebElement categoryTitleInput = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("name"))
             );
-            categoryTitleInput.sendKeys("Test Category0007");
+            categoryTitleInput.sendKeys("Test Category0017");
             System.out.println("✅ Entered new category name");
 
             // 7. Enter category key
             WebElement categoryKeyInput = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("key"))
             );
-            categoryKeyInput.sendKeys("Test Category key0007");
+            categoryKeyInput.sendKeys("Test Category key0017");
             System.out.println("✅ Entered new category key");
 
             // 8. Click Create button
