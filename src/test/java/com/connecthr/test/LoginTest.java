@@ -25,7 +25,7 @@ public class LoginTest {
 
 
         // For local visible browser (NOT headless)
-        //options.addArguments("--headless=new");
+        options.addArguments("--headless=new");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-gpu");
