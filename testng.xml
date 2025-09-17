@@ -2,6 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/connect resources/ConnectHRAutomation/src/test/java/com/connecthr/test/LoginTest.java">
-        <classes/>
+        <classes>
+            <class name="com.connecthr.test.LoginTest">
+                <methods>
+                    <include name="loginAndCreateCategoryTest"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
