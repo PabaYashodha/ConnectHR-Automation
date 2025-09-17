@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 9">
-      <change afterPath="$PROJECT_DIR$/allure-results/095182b1-efc8-403a-bcd5-ffc1269d104b-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/444817fa-8bd3-43c3-8569-d8ba5947e037-result.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/69d759d4-765d-4328-ae7e-fb73180b6d43-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/796fd2d6-1af8-4d1c-8061-ad371703aae3-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/cc18597c-5e74-476b-9a29-729ce9b557aa-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/f618a576-0c8a-4e60-84dd-89432e71c86c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/058fec88-6823-4205-9128-85aaf5ff3433-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/089239c6-0824-48c7-9967-d65b0af6168c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0cfb8181-3428-4cdd-b853-913010e9b8c5-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/453dff9b-8c50-4077-9ab6-2fa52f176734-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/4ed7818c-d3d3-4e27-be44-5b01c3dca556-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5a57fac5-af35-402a-ab0b-0d5cd1655424-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8be7ae32-873e-4a1c-aa18-406340128a8a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/93986b32-50a4-4b9d-98d0-7db390222328-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/9487257b-2ab3-4f76-a343-7a27a1a0bc34-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/9b09f69e-3eeb-45bf-b82e-0b460baf5156-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/9e1a6fce-c0ff-40d7-9c05-64159c7a328e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d0dfd2f1-06c1-43eb-a5a3-c350889f422a-container.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +298,31 @@
       <option name="project" value="LOCAL" />
       <updated>1758101328616</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="commit 9">
+      <option name="closed" value="true" />
+      <created>1758108889455</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1758108889455</updated>
+    </task>
+    <task id="LOCAL-00031" summary="commit 9">
+      <option name="closed" value="true" />
+      <created>1758108998790</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1758108998790</updated>
+    </task>
+    <task id="LOCAL-00032" summary="commit 9">
+      <option name="closed" value="true" />
+      <created>1758109026161</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1758109026161</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

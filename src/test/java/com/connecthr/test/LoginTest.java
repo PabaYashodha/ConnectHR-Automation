@@ -23,15 +23,17 @@ public class LoginTest {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 
-        // Headless mode for Jenkins
-        options.addArguments("--headless=new"); // modern headless
-        options.addArguments("--window-size=1920,1080"); // ensure elements are visible
-        options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
+
+        // For local visible browser (NOT headless)
+        //options.addArguments("--headless=new");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // increase timeout
+        driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @Test(description = "Verify login and create a new category in Asset Management")
@@ -41,6 +43,7 @@ public class LoginTest {
         try {
             // 1. Open the login page
             driver.get("https://172.21.128.14/login");
+            Thread.sleep(2000); // pause
 
             // 2. Login
             WebElement usernameField = wait.until(
@@ -55,11 +58,13 @@ public class LoginTest {
 
             usernameField.sendKeys("Support@connecthr.ae");
             passwordField.sendKeys("C0nne<t@#2|");
+            Thread.sleep(1000);
             loginButton.click();
 
             // 3. Verify login
             wait.until(ExpectedConditions.urlContains("dashboard"));
             System.out.println("✅ Login successful");
+            Thread.sleep(2000);
 
             // 4. Navigate to Asset Management module
             WebElement assetModule = wait.until(
@@ -70,6 +75,7 @@ public class LoginTest {
             assetModule.click();
             wait.until(ExpectedConditions.urlContains("/asset"));
             System.out.println("✅ Navigated to Asset Management module");
+            Thread.sleep(2000);
 
             // 5. Click new category button
             WebElement newCategoryBtn = wait.until(
@@ -79,20 +85,23 @@ public class LoginTest {
             );
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
+            Thread.sleep(2000);
 
             // 6. Enter category name
             WebElement categoryTitleInput = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("name"))
             );
-            categoryTitleInput.sendKeys("Test Category0017");
+            categoryTitleInput.sendKeys("Test Category07");
             System.out.println("✅ Entered new category name");
+            Thread.sleep(1000);
 
             // 7. Enter category key
             WebElement categoryKeyInput = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("key"))
             );
-            categoryKeyInput.sendKeys("Test Category key0017");
+            categoryKeyInput.sendKeys("Test Category key07");
             System.out.println("✅ Entered new category key");
+            Thread.sleep(1000);
 
             // 8. Click Create button
             WebElement createBtn = wait.until(
@@ -102,6 +111,7 @@ public class LoginTest {
             );
             createBtn.click();
             System.out.println("✅ Form submitted");
+            Thread.sleep(2000);
 
             // 9. Search the category
             WebElement searchBox1 = wait.until(
@@ -111,6 +121,7 @@ public class LoginTest {
             searchBox1.sendKeys("Laptop");
             searchBox1.sendKeys(Keys.ENTER);
             System.out.println("✅ Category searched successfully.");
+            Thread.sleep(2000);
 
             Assert.assertTrue(true, "Test completed successfully");
 
