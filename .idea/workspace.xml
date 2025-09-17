@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 2">
+    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 3">
+      <change afterPath="$PROJECT_DIR$/allure-results/00b19b3e-7714-42c7-86ea-58963fe23e08-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/2c070b8f-24ba-4ae8-82b2-ac86ae48d90b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/577f0775-9f3b-4f47-a423-2d7badfd0fa2-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6fdecce3-0c57-4396-8b9e-3ac89cb45cee-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8f796e14-d61d-42c5-809a-f4e373cf5a57-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ccb57552-1cc4-4552-a541-30a3bca1b87f-result.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,13 +139,22 @@
       <option name="project" value="LOCAL" />
       <updated>1758070613280</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit 3">
+      <option name="closed" value="true" />
+      <created>1758071000838</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1758071000838</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit 1" />
     <MESSAGE value="commit 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 2" />
+    <MESSAGE value="commit 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 3" />
   </component>
 </project>
