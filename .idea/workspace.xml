@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 8" />
+    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 9">
+      <change afterPath="$PROJECT_DIR$/allure-results/095182b1-efc8-403a-bcd5-ffc1269d104b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/444817fa-8bd3-43c3-8569-d8ba5947e037-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/69d759d4-765d-4328-ae7e-fb73180b6d43-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/796fd2d6-1af8-4d1c-8061-ad371703aae3-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/cc18597c-5e74-476b-9a29-729ce9b557aa-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/f618a576-0c8a-4e60-84dd-89432e71c86c-container.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,7 +275,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758100949226</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="commit 9">
+      <option name="closed" value="true" />
+      <created>1758101186092</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1758101186092</updated>
+    </task>
+    <task id="LOCAL-00029" summary="commit 9">
+      <option name="closed" value="true" />
+      <created>1758101328616</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1758101328616</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -280,6 +304,7 @@
     <MESSAGE value="commit 6" />
     <MESSAGE value="commit 7" />
     <MESSAGE value="commit 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 8" />
+    <MESSAGE value="commit 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 9" />
   </component>
 </project>

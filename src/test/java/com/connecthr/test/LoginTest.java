@@ -9,7 +9,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Date;
 
 @Epic("ConnectHR Automation")
 @Feature("Login & Asset Management")
@@ -24,14 +29,14 @@ public class LoginTest {
         ChromeOptions options = new ChromeOptions();
 
         // Headless mode for Jenkins
-        options.addArguments("--headless=new"); // modern headless
-        options.addArguments("--window-size=1920,1080"); // ensure elements are visible
-        options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
+        options.addArguments("--headless=new");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // increase timeout
+        wait = new WebDriverWait(driver, Duration.ofSeconds(25)); // longer wait
     }
 
     @Test(description = "Verify login and create a new category in Asset Management")
@@ -80,26 +85,22 @@ public class LoginTest {
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
-            // 6. Enter category name
-            WebElement categoryTitleInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.id("name"))
+            // 6. Wait for modal before entering category name
+            WebElement modal = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ant-modal-content"))
             );
+
+            WebElement categoryTitleInput = modal.findElement(By.id("name"));
             categoryTitleInput.sendKeys("Test Category0007");
             System.out.println("✅ Entered new category name");
 
             // 7. Enter category key
-            WebElement categoryKeyInput = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(By.id("key"))
-            );
+            WebElement categoryKeyInput = modal.findElement(By.id("key"));
             categoryKeyInput.sendKeys("Test Category key0007");
             System.out.println("✅ Entered new category key");
 
             // 8. Click Create button
-            WebElement createBtn = wait.until(
-                    ExpectedConditions.elementToBeClickable(
-                            By.xpath("//button[span[normalize-space()='Create']]")
-                    )
-            );
+            WebElement createBtn = modal.findElement(By.xpath("//button[span[normalize-space()='Create']]"));
             createBtn.click();
             System.out.println("✅ Form submitted");
 
@@ -115,6 +116,7 @@ public class LoginTest {
             Assert.assertTrue(true, "Test completed successfully");
 
         } catch (Exception e) {
+            takeScreenshot("failure");
             e.printStackTrace();
             Assert.fail("Test failed due to exception: " + e.getMessage());
         }
@@ -125,6 +127,18 @@ public class LoginTest {
         if (driver != null) {
             driver.quit();
             System.out.println("✅ Browser closed");
+        }
+    }
+
+    // Utility: take screenshot on failure
+    private void takeScreenshot(String name) {
+        try {
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            String fileName = "target/screenshots/" + name + "_" + new Date().getTime() + ".png";
+            FileUtils.copyFile(src, new File(fileName));
+            System.out.println("📸 Screenshot saved: " + fileName);
+        } catch (IOException io) {
+            io.printStackTrace();
         }
     }
 }
