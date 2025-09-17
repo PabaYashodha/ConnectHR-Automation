@@ -23,15 +23,20 @@ public class LoginTest {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 
-        // Headless mode for Jenkins
-        options.addArguments("--headless=new"); // modern headless
-        options.addArguments("--window-size=1920,1080"); // ensure elements are visible
-        options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
+        // Dynamically set headless based on system property
+        String headless = System.getProperty("headless", "false");
+        if (headless.equalsIgnoreCase("true")) {
+            options.addArguments("--headless=new"); // headless for Jenkins
+        }
+
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // increase timeout
+        driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @Test(description = "Verify login and create a new category in Asset Management")
@@ -39,10 +44,9 @@ public class LoginTest {
     @Story("Login -> Navigate -> Create Category -> Search Category")
     public void loginAndCreateCategoryTest() {
         try {
-            // 1. Open the login page
             driver.get("https://172.21.128.14/login");
 
-            // 2. Login
+            // Login
             WebElement usernameField = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("login_username"))
             );
@@ -57,11 +61,10 @@ public class LoginTest {
             passwordField.sendKeys("C0nne<t@#2|");
             loginButton.click();
 
-            // 3. Verify login
             wait.until(ExpectedConditions.urlContains("dashboard"));
             System.out.println("✅ Login successful");
 
-            // 4. Navigate to Asset Management module
+            // Navigate to Asset Management module
             WebElement assetModule = wait.until(
                     ExpectedConditions.elementToBeClickable(
                             By.xpath("//span[@class='menu-text' and normalize-space(text())='Assets Management']")
@@ -71,7 +74,7 @@ public class LoginTest {
             wait.until(ExpectedConditions.urlContains("/asset"));
             System.out.println("✅ Navigated to Asset Management module");
 
-            // 5. Click new category button
+            // Click new category button
             WebElement newCategoryBtn = wait.until(
                     ExpectedConditions.elementToBeClickable(
                             By.xpath("//button[span[normalize-space()='New category']]")
@@ -80,21 +83,21 @@ public class LoginTest {
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
-            // 6. Enter category name
+            // Enter category name
             WebElement categoryTitleInput = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("name"))
             );
             categoryTitleInput.sendKeys("Test Category0007");
             System.out.println("✅ Entered new category name");
 
-            // 7. Enter category key
+            // Enter category key
             WebElement categoryKeyInput = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.id("key"))
             );
             categoryKeyInput.sendKeys("Test Category key0007");
             System.out.println("✅ Entered new category key");
 
-            // 8. Click Create button
+            // Click Create button
             WebElement createBtn = wait.until(
                     ExpectedConditions.elementToBeClickable(
                             By.xpath("//button[span[normalize-space()='Create']]")
@@ -103,7 +106,7 @@ public class LoginTest {
             createBtn.click();
             System.out.println("✅ Form submitted");
 
-            // 9. Search the category
+            // Search the category
             WebElement searchBox1 = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Search']"))
             );

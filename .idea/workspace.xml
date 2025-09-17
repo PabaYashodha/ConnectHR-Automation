@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 8">
-      <change afterPath="$PROJECT_DIR$/allure-results/20bc3a4c-b732-47f7-bdb8-aa9e859dfd63-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/61ea00fa-2c13-458e-aebc-996f49b4dc48-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/62602122-8be2-4034-8246-a30d8a83a61b-result.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/7d849f89-c45a-473f-aa9c-8537a9a843f9-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/a951f537-c323-4104-9593-81eabf2e631b-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/ab4609ab-8e48-4735-bfd4-b299039477ba-container.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 8" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,7 +251,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758098079775</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="commit 8">
+      <option name="closed" value="true" />
+      <created>1758100730738</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1758100730738</updated>
+    </task>
+    <task id="LOCAL-00027" summary="commit 8">
+      <option name="closed" value="true" />
+      <created>1758100949226</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1758100949226</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
