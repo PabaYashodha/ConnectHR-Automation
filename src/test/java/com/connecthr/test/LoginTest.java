@@ -74,16 +74,9 @@ public class LoginTest {
             System.out.println("✅ Modal is visible");
 
             // 7. Enter category title
-            WebElement categoryTitleInput;
-            try {
-                categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(
-                        By.xpath("//input[@placeholder='Category title']")));
-            } catch (TimeoutException e) {
-                System.out.println("⚠ Element not clickable, printing page source for debug:");
-                System.out.println(driver.getPageSource());
-                throw e;
-            }
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryTitleInput);
+            WebElement categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[contains(@class,'ant-modal-content')]//input[@placeholder='Category title']")));
+
             categoryTitleInput.sendKeys("Test Category47");
             System.out.println("✅ Entered new category name");
 

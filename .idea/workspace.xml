@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 4">
+    <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 5">
+      <change afterPath="$PROJECT_DIR$/allure-results/1447e92c-338f-4ca0-9106-5d9464ed9907-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/4f87c886-034a-4561-8530-4ad05bfcd884-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/873a8f6f-3075-43fe-989f-50e76e9f151b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b2b10a68-31a0-4d43-aa37-5fbb31921594-container.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/connecthr/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758073948276</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commit 5">
+      <option name="closed" value="true" />
+      <created>1758074741146</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1758074741146</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,6 +195,7 @@
     <MESSAGE value="commit 2" />
     <MESSAGE value="commit 3" />
     <MESSAGE value="commit 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 4" />
+    <MESSAGE value="commit 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 5" />
   </component>
 </project>
