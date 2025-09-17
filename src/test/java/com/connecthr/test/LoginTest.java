@@ -26,7 +26,9 @@ public class LoginTest {
         options.addArguments("--ignore-certificate-errors"); // Ignore SSL
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        // Increased wait for slower Jenkins environment
+        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 
     @Test(description = "Verify login and create a new category in Asset Management")
@@ -68,17 +70,26 @@ public class LoginTest {
             // 6. Wait for modal to appear
             wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//div[contains(@class,'ant-modal-content')]")));
-            Thread.sleep(1000); // wait for modal animation
+            Thread.sleep(2000); // wait for modal animation
             System.out.println("✅ Modal is visible");
 
             // 7. Enter category title
-            WebElement categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath("//input[@placeholder='Category title']")));
-            categoryTitleInput.sendKeys("Test Category37");
+            WebElement categoryTitleInput;
+            try {
+                categoryTitleInput = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("//input[@placeholder='Category title']")));
+            } catch (TimeoutException e) {
+                System.out.println("⚠ Element not clickable, printing page source for debug:");
+                System.out.println(driver.getPageSource());
+                throw e;
+            }
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryTitleInput);
+            categoryTitleInput.sendKeys("Test Category47");
             System.out.println("✅ Entered new category name");
 
             // 8. Enter category key
             WebElement categoryKeyInput = wait.until(ExpectedConditions.elementToBeClickable(By.id("key")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryKeyInput);
             categoryKeyInput.sendKeys("Test Category key37");
             System.out.println("✅ Entered new category key");
 

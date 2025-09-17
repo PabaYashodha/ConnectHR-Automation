@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99758477-f90e-4359-bc70-12952b42d79b" name="Changes" comment="commit 4">
-      <change afterPath="$PROJECT_DIR$/allure-results/58c33706-159c-4498-9efb-4ed9ddc57c0f-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/9701b62b-f989-4a57-b287-04fbc24382db-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/ad0ae94f-8d25-4ee7-9850-28b2bb22309e-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/b0f2a670-5a9b-4dc3-ba7c-155569d84c27-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/ea0c81af-15ce-43de-826c-01739b8d7084-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/allure-results/f06b5d5d-828c-4aa5-9def-77452eb136ec-result.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -172,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758073326697</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit 4">
+      <option name="closed" value="true" />
+      <created>1758073948276</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1758073948276</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
