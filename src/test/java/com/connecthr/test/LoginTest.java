@@ -25,8 +25,8 @@ public class LoginTest {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--ignore-certificate-errors");
-       // options.addArguments("--headless=new");              // Jenkins-safe
-        options.addArguments("--window-size=1920,1080");
+       // options.addArguments("--headless=new");              // important for Jenkins
+        options.addArguments("--window-size=1920,1080");     // prevent hidden elements
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
@@ -35,45 +35,28 @@ public class LoginTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 
-    /**
-     * Helper method to perform login.
-     */
-    private void performLogin() {
-        driver.get("https://172.21.128.14/login");
-
-        WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_username")));
-        WebElement passwordField = driver.findElement(By.id("login_password"));
-        WebElement loginButton = driver.findElement(By.cssSelector("button.login-button"));
-
-        usernameField.sendKeys("Support@connecthr.ae");
-        passwordField.sendKeys("C0nne<t@#2|");
-        loginButton.click();
-
-        wait.until(ExpectedConditions.urlContains("dashboard"));
-        System.out.println("✅ Login successful");
-    }
-
-    @Test(description = "Verify login only")
-    @Severity(SeverityLevel.BLOCKER)
-    @Story("Login -> Dashboard")
-    public void loginTest() {
-        try {
-            performLogin();
-            Assert.assertTrue(driver.getCurrentUrl().contains("dashboard"), "User is not on dashboard after login!");
-        } catch (Exception e) {
-            Assert.fail("Login test failed due to exception: " + e.getMessage());
-        }
-    }
-
     @Test(description = "Verify login and create a new category in Asset Management")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Login -> Navigate -> Create Category -> Search Category")
     public void loginAndCreateCategoryTest() {
         try {
-            // 1. Perform login
-            performLogin();
+            // 1. Open login page
+            driver.get("https://172.21.128.14/login");
 
-            // 2. Navigate to Asset Management module
+            // 2. Login
+            WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_username")));
+            WebElement passwordField = driver.findElement(By.id("login_password"));
+            WebElement loginButton = driver.findElement(By.cssSelector("button.login-button"));
+
+            usernameField.sendKeys("Support@connecthr.ae");
+            passwordField.sendKeys("C0nne<t@#2|");
+            loginButton.click();
+
+            // 3. Verify login
+            wait.until(ExpectedConditions.urlContains("dashboard"));
+            System.out.println("✅ Login successful");
+
+            // 4. Navigate to Asset Management module
             WebElement assetModule = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//span[@class='menu-text' and normalize-space(text())='Assets Management']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", assetModule);
@@ -81,20 +64,20 @@ public class LoginTest {
             wait.until(ExpectedConditions.urlContains("/asset"));
             System.out.println("✅ Navigated to Asset Management module");
 
-            // 3. Click New Category button
+            // 5. Click New Category button
             WebElement newCategoryBtn = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//button[span[normalize-space()='New category']]")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", newCategoryBtn);
             newCategoryBtn.click();
             System.out.println("✅ Navigated to new category form");
 
-            // 4. Wait for modal to appear
+            // 6. Wait for modal to appear fully
             wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//div[contains(@class,'ant-modal-content')]")));
             Thread.sleep(1500); // allow animation
             System.out.println("✅ Modal is visible");
 
-            // 5. Enter category title
+            // 7. Enter category title (visibility + clickable + scroll)
             By categoryTitleLocator = By.xpath("//div[contains(@class,'ant-modal-content')]//input[@id='name']");
             WebElement categoryTitleInput = wait.until(ExpectedConditions.visibilityOfElementLocated(categoryTitleLocator));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryTitleInput);
@@ -102,20 +85,20 @@ public class LoginTest {
             categoryTitleInput.sendKeys("Test Category57");
             System.out.println("✅ Entered new category name");
 
-            // 6. Enter category key
+            // 8. Enter category key
             WebElement categoryKeyInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("key")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", categoryKeyInput);
             wait.until(ExpectedConditions.elementToBeClickable(categoryKeyInput));
             categoryKeyInput.sendKeys("Test Category key37");
             System.out.println("✅ Entered new category key");
 
-            // 7. Click Create button
+            // 9. Click Create button
             WebElement createBtn = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//button[span[normalize-space()='Create']]")));
             createBtn.click();
             System.out.println("✅ Form submitted");
 
-            // 8. Search the category
+            // 10. Search the category
             WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//input[@placeholder='Search']")));
             searchBox.clear();
