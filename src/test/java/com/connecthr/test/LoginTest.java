@@ -24,7 +24,7 @@ public class LoginTest {
         ChromeOptions options = new ChromeOptions();
 
         // Headless mode for Jenkins
-        //options.addArguments("--headless=new"); // modern headless
+        options.addArguments("--headless=new"); // modern headless
         options.addArguments("--window-size=1920,1080"); // ensure elements are visible
         options.addArguments("--ignore-certificate-errors"); // ignore SSL warnings
         options.addArguments("--disable-gpu");
